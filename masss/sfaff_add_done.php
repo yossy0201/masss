@@ -20,10 +20,10 @@ $staff_pass=htmlspecialchars($staff_pass,ENT_QUOTES,'UTF-8');
 $dsn='mysql:dbname=masss;host=localhost;charset=utf8';
 $user='root';
 $password='yossy0201';
-$dbh = new PDO($dsn,$user,$password);
-$dbh->set_attribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+$dbh = new PDO($dsn, $user, $password);
+$dbh->set_Attribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$sql='INSERT INTO mst_staff(name,password)VALUES(?,?)';
+$sql='INSERT INTO mst_staff(name,password) VALUES (?,?)';
 $stmt=$dbh->prepare($sql);
 $data[]=$staff_name;
 $data[]=$staff_pass;
@@ -31,11 +31,11 @@ $stmt->execute($data);
 
 $dbh=null;
 
-print$staff_name;
+print $staff_name;
 print'さんを追加しました。<br/>';
 
 }
-catch(Exception $e)
+catch (Exception $e)
 {
   print'ただいま障害により大変ご迷惑をおかけしております。';
   exit();
