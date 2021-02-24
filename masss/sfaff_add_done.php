@@ -20,7 +20,7 @@ $staff_pass=htmlspecialchars($staff_pass,ENT_QUOTES,'UTF-8');
 $dsn='mysql:dbname=masss;host=localhost;charset=utf8';
 $user='root';
 $password='yossy0201';
-$dbh = new PDO($dsn, $user, $password);
+$dbh = new PDO('mysql:dbname=masss;host=localhost;charset=utf8','root','root');
 $dbh->set_Attribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $sql='INSERT INTO mst_staff(name,password) VALUES (?,?)';
